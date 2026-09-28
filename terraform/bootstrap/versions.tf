@@ -8,6 +8,13 @@ terraform {
     }
   }
 
+  backend "s3" {
+    bucket       = "pulsewatch-tfstate-899259775765"
+    key          = "bootstrap/terraform.tfstate"
+    region       = "eu-west-2"
+    encrypt      = true
+    use_lockfile = true
+  }
 }
 
 provider "aws" {
