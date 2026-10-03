@@ -23,3 +23,11 @@ module "ecr" {
   name         = "pulsewatch"
   force_delete = true
 }
+
+
+module "acm" {
+  source = "../../modules/acm"
+
+  zone_name   = "karimothman.co.uk"
+  domain_name = "pulsewatch.karimothman.co.uk"
+}
