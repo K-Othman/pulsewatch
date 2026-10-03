@@ -1,14 +1,14 @@
 resource "aws_ecr_repository" "this" {
-    name = var.name
-    image_tag_mutability = "IMMUTABLE"
-    force_delete = var.force_delete
+  name                 = var.name
+  image_tag_mutability = "IMMUTABLE"
+  force_delete         = var.force_delete
 
-    image_scanning_configuration {
-      scan_on_push = true
-    }
-    tags = {
-      name = var.name
-    }
+  image_scanning_configuration {
+    scan_on_push = true
+  }
+  tags = {
+    name = var.name
+  }
 }
 
 resource "aws_ecr_lifecycle_policy" "this" {
