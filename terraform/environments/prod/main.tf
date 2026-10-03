@@ -16,3 +16,10 @@ module "security_groups" {
   name   = "pulsewatch"
   vpc_id = module.networking.vpc_id
 }
+
+module "ecr" {
+  source = "../../modules/ecr"
+
+  name         = "pulsewatch"
+  force_delete = true
+}
