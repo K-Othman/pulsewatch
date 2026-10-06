@@ -54,3 +54,15 @@ module "alb" {
   zone_id           = module.acm.zone_id
   domain_name       = "pulsewatch.karimothman.co.uk"
 }
+
+# ---------- RDS ----------
+
+module "rds" {
+  source = "../../modules/rds"
+
+  name                  = "pulsewatch"
+  db_name               = "pulsewatch"
+  username              = "pulsewatch"
+  private_db_subnet_ids = module.networking.private_db_subnet_ids
+  rds_sg_id             = module.security_groups.rds_sg_id
+}
