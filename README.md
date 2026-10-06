@@ -32,8 +32,8 @@ Region: `eu-west-2` (London). Domain: `pulsewatch.karimothman.co.uk`.
 - [x] **Security groups**: one per role (ALB, web, worker, RDS), referencing each other instead of IP ranges
 - [x] **ECR**: image repository with immutable tags, scan on push and a lifecycle policy
 - [x] **ACM**: TLS certificate validated through Route 53 DNS
-- [ ] ALB
-- [ ] RDS
+- [x] ALB
+- [x] RDS
 - [ ] CloudWatch logs and alarms
 - [ ] ECS cluster and services
 - [ ] The app (Next.js dashboard, worker, `/health` endpoint, Dockerfile)
